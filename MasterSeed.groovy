@@ -1,7 +1,12 @@
 def configSlurper = new ConfigSlurper()
 
-def config = configSlurper.parse(readFileFromWorkspace("seedConfig.cfg"))
+def seedConfig = configSlurper.parse(readFileFromWorkspace("seedConfig.cfg"))
 
-config.each { name, path ->
-  job "${name}", readFileFromWorkspace($path)
+seedConfig.seedJobs.each { name, path ->
+  def jobConfig = readFileFromWorkspace("${path}")
+  println "${jobConfig}"
+  
+  def myJob = job("${name}") {
+    readFileFromWorkspace("${path}")
+  }
 }
