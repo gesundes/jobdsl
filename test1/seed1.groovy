@@ -1,6 +1,6 @@
-{ it ->
+{ ->
   scm {
-    github('jenkinsci/job-dsl-plugin', 'master')
+    git('jenkinsci/job-dsl-plugin', 'master')
   }
   triggers {
     cron("@hourly")
