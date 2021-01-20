@@ -1,4 +1,4 @@
-{ ->
+{ it ->
   scm {
     git('jenkinsci/job-dsl-plugin', 'master')
   }
