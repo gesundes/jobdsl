@@ -6,7 +6,12 @@ seedConfig.seedJobs.each { name, path ->
   def jobConfig = readFileFromWorkspace("${path}")
   println "${jobConfig}"
   
-  def myJob = job("${name}") {
+/*  def myJob = job("${name}") {
+    readFileFromWorkspace("${path}")
+  }
+*/
+  def myJob = job("${name}")
+  myJob.with {
     readFileFromWorkspace("${path}")
   }
 }
