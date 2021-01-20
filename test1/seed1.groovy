@@ -1,1 +1,3 @@
-description 'Build and test the app.'
+{
+  description 'Build and test the app.'
+}
