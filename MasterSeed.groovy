@@ -7,13 +7,13 @@ seedConfig.seedJobs.each { name, path ->
   Closure jobConfig = { readFileFromWorkspace("${path}") }
   println(jobConfig)
   
-  def content = {
+  def closure = {
         scm {
             git("git://github.com/${project}.git", branchName)
         }
   }
   
-  job name content
+  job name closure
 
 /*
   def myJob = job("${name}")
