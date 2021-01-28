@@ -13,7 +13,7 @@ seedConfig.seedJobs.each { name, path ->
         }
   }
   
-  job name closure
+  job(name, closure)
 
 /*
   def myJob = job("${name}")
