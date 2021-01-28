@@ -8,6 +8,6 @@ seedConfig.seedJobs.each { name, path ->
   println(jobConfig)
 
   def myJob = job("${name}")
-  myJob.with jobConfig
-
+  myJob.with {
+    this.readFileFromWorkspace("${path}")
 }
