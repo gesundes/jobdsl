@@ -1,1 +1,3 @@
-println(it)
+printSmth = { it ->
+  println(it)
+}
