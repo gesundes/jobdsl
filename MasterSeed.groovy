@@ -6,9 +6,7 @@ seedConfig.seedJobs.each { name, path ->
   def jobConfig = { readFileFromWorkspace("${path}") }
   
   job("${name}") {
-    steps {
-        shell('echo Hello World!')
-    }
+    jobConfig
   }
 
 /*
