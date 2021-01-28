@@ -6,20 +6,6 @@ seedConfig.seedJobs.each { name, path ->
   def jobConfig = { readFileFromWorkspace("${path}") }
   
   job("${name}") {
-    
-    scm {
-      git {
-          remote {
-              name('remoteB')
-              url('git@server:account/repo1.git')
-          }
-          extensions {
-              cleanAfterCheckout()
-              relativeTargetDirectory('repo1')
-          }
-      }
-    }
-    
   }
 
 /*
