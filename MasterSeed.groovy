@@ -7,7 +7,20 @@ seedConfig.seedJobs.each { name, path ->
   assert jobConfig instanceof Closure
   
   job("${name}") {
-    jobConfig
+    
+    scm {
+      git {
+          remote {
+              name('remoteB')
+              url('git@server:account/repo1.git')
+          }
+          extensions {
+              cleanAfterCheckout()
+              relativeTargetDirectory('repo1')
+          }
+      }
+    }
+    
   }
 
 /*
