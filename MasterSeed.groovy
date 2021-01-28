@@ -5,9 +5,7 @@ def seedConfig = configSlurper.parse(readFileFromWorkspace("seedConfig.cfg"))
 seedConfig.seedJobs.each { name, path ->
   def jobConfig = { readFileFromWorkspace("${path}") }
   
-  job("${name}") {
-    jobConfig
-  }
+  job("${name}", jobConfig)
 
 /*
   def myJob = job("${name}")
