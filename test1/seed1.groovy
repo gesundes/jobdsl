@@ -1,9 +1,12 @@
-  scm {
-    git('jenkinsci/job-dsl-plugin', 'master')
-  }
-  triggers {
-    cron("@hourly")
-  }
-  steps {
-    shell("echo 'Hello World'")
-  }
+scm {
+    git {
+        remote {
+            name('remoteB')
+            url('git@server:account/repo1.git')
+        }
+        extensions {
+            cleanAfterCheckout()
+            relativeTargetDirectory('repo1')
+        }
+    }
+}
