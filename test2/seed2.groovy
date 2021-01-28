@@ -1,3 +1,4 @@
+{  
   scm {
     github('jenkinsci/job-dsl-plugin', 'master')
   }
@@ -7,3 +8,4 @@
   steps {
     shell("echo 'Hello World'")
   }
+}
