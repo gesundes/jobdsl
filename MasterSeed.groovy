@@ -11,7 +11,7 @@ seedConfig.seedJobs.each { name, path ->
 
   def myJob = job("${name}")
   myJob.with {
-    { it -> readFileFromWorkspace("${path}") }
+    { ccconfig -> readFileFromWorkspace("${path}") }
   }
 
 }
