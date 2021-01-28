@@ -9,7 +9,7 @@ seedConfig.seedJobs.each { name, path ->
   
   def closure = {
         scm {
-            git("git://github.com/", branchName)
+            git("git://github.com/")
         }
   }
   
