@@ -1,8 +1,14 @@
-job("JobName") {
+job('example-1') {
     scm {
-        git("git://github.com/${project}.git", branchName)
-    }
-    steps {
-        maven("test -Dproject.name=${project}/${branchName}")
+        git {
+            remote {
+                name('remoteB')
+                url('git@server:account/repo1.git')
+            }
+            extensions {
+                cleanAfterCheckout()
+                relativeTargetDirectory('repo1')
+            }
+        }
     }
 }
