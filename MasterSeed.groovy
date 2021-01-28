@@ -3,15 +3,12 @@ def configSlurper = new ConfigSlurper()
 def seedConfig = configSlurper.parse(readFileFromWorkspace("seedConfig.cfg"))
 
 seedConfig.seedJobs.each { name, path ->
-/*
   Closure jobConfig = { readFileFromWorkspace("${path}") }
-  
-  job("${name}", jobConfig)
-*/
+  println(jobConfig)
 
   def myJob = job("${name}")
   myJob.with {
-    { ccconfig -> readFileFromWorkspace("${path}") }
+    jobConfig
   }
 
 }
