@@ -1,3 +1,1 @@
-steps {
-    shell('echo Hello World!')
-}
+println(it)
