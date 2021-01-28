@@ -1,3 +1,5 @@
-printSmth = { it ->
-  println(it)
+def closure = {
+      scm {
+          git("git://github.com/")
+      }
 }
