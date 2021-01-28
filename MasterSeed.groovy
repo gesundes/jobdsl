@@ -6,7 +6,7 @@ seedConfig.seedJobs.each { name, path ->
   def jobConfig = { readFileFromWorkspace("${path}") }
   assert jobConfig instanceof Closure
   
-  def myJob = job("${name}") {
+  job("${name}") {
     jobConfig
   }
 
